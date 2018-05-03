@@ -1,7 +1,8 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
+#define JOHNNY_DEBUG
+ 
 #if defined(HAVE_CONFIG_H)
 #include "config/bitcoin-config.h"
 #endif
@@ -329,6 +330,11 @@ BitcoinApplication::BitcoinApplication(int &argc, char **argv):
 #endif
     returnValue(0)
 {
+#ifdef JOHNNY_DEBUG
+    printf("johnny debugging!!!\n");
+#endif
+
+
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
